@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.connectis.JpaTutorial.domain.Brand;
+import pl.connectis.JpaTutorial.domain.Engine;
 import pl.connectis.JpaTutorial.domain.Model;
 import pl.connectis.JpaTutorial.repository.BrandRepository;
 import pl.connectis.JpaTutorial.repository.ModelRepository;
@@ -24,12 +25,14 @@ public class CmdRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("I'm running");
 
-        Brand brand = brandRepository.getOne(-1L);
-        for (Model model : brand.getModels()) {
-            System.out.println("Model: " + model.getName());
+        Model mazda6 = modelRepository.getOne(-1L);
+        for (Engine engine : mazda6.getEngines()) {
+            System.out.println("Mazda 6 engine: " + engine.getCode());
         }
 
-        Model pegeout508 = modelRepository.getOne(-3L);
-        System.out.println(pegeout508.getBrand().getName());
+        Model mazdacx5 = modelRepository.getOne(-2L);
+        for (Engine engine : mazdacx5.getEngines()) {
+            System.out.println("Mazda CX-5 engine: " + engine.getCode());
+        }
     }
 }

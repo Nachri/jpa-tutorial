@@ -16,3 +16,9 @@ insert into engine (code, type) values
 ('SKYACTIV—G 2.0', 'PETROL'),
 ('SKYACTIV-G 2.5', 'PETROL'),
 ('SKYACTIV-D 2.2', 'DIESEL');
+
+insert into model_engines(model_id, engine_code) values
+(-1, 'SKYACTIV—G 2.0'),
+(-1, 'SKYACTIV-G 2.5'),
+(-1, 'SKYACTIV-D 2.2'),
+(-2, 'SKYACTIV-D 2.2');
