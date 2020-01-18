@@ -5,10 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -22,4 +20,12 @@ public class Engine {
 
     @Enumerated(EnumType.STRING)
     private EngineType type;
+
+    @ManyToMany
+    @JoinTable(
+            name = "model_engines",
+            joinColumns = @JoinColumn(name = "engine_code"),
+            inverseJoinColumns = @JoinColumn(name = "model_id")
+    )
+    private Set<Model> models;
 }
