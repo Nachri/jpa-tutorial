@@ -28,5 +28,8 @@ public class CmdRunner implements CommandLineRunner {
         for (Model model : brand.getModels()) {
             System.out.println("Model: " + model.getName());
         }
+
+        Model pegeout508 = modelRepository.getOne(-3L);
+        System.out.println(pegeout508.getBrand().getName());
     }
 }

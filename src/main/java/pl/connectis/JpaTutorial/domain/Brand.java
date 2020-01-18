@@ -27,7 +27,6 @@ public class Brand {
     @OneToOne
     private Ceo ceo;
 
-    @OneToMany
-    @JoinColumn(name = "brand_id")
+    @OneToMany(mappedBy = "brand")
     private Set<Model> models;
 }
