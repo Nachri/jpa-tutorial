@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @EqualsAndHashCode(of = "id")
@@ -25,4 +26,8 @@ public class Brand {
 
     @OneToOne
     private Ceo ceo;
+
+    @OneToMany
+    @JoinColumn(name = "brand_id")
+    private Set<Model> models;
 }
