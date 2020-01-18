@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -23,4 +24,7 @@ public class Model {
     @ManyToOne
     @JoinColumn(name = "brand_id") // optional
     private Brand brand;
+
+    @ManyToMany(mappedBy = "models")
+    private Set<Engine> engines;
 }
