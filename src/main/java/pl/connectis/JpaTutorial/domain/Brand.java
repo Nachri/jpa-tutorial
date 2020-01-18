@@ -23,7 +23,6 @@ public class Brand {
     @Enumerated(value = EnumType.STRING)
     private Country origin;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ceo_id")
+    @OneToOne
     private Ceo ceo;
 }

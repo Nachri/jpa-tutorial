@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 @Setter
@@ -23,4 +24,7 @@ public class Ceo {
     private String firstName;
 
     private String lastName;
+
+    @OneToOne(mappedBy = "ceo")
+    private Brand brand;
 }
