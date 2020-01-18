@@ -24,7 +24,7 @@ public class Brand {
     @Enumerated(value = EnumType.STRING)
     private Country origin;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Ceo ceo;
 
     @OneToMany(mappedBy = "brand")
