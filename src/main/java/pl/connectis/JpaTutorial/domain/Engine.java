@@ -1,5 +1,6 @@
 package pl.connectis.JpaTutorial.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,5 +28,6 @@ public class Engine {
             joinColumns = @JoinColumn(name = "engine_code"),
             inverseJoinColumns = @JoinColumn(name = "model_id")
     )
+    @JsonIgnore
     private Set<Model> models;
 }

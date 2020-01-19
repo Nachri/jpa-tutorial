@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -19,6 +20,7 @@ public class Model {
     @GeneratedValue
     private long id;
 
+    @Length(min = 3, max =8)
     private String name;
 
     @ManyToOne

@@ -1,5 +1,6 @@
 package pl.connectis.JpaTutorial.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,5 +29,6 @@ public class Brand {
     private Ceo ceo;
 
     @OneToMany(mappedBy = "brand")
+    @JsonIgnore
     private Set<Model> models;
 }
